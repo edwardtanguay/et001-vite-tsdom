@@ -7,4 +7,15 @@ body {
 	h1 {
 		color: rgb(240, 211, 131);
 	}
+
+	.books {
+
+		.book {
+			background-color: #222;
+			margin-bottom: 1rem;
+			padding: 1rem;
+			max-width: 32rem;
+		}
+
+	}
 }
