@@ -1,13 +1,9 @@
 import './style.scss';
 import axios from 'axios';
+import { IBook } from './interfaces';
+import { displayBook } from './modules/displayBook';
 
 const rawBooksUrl = 'https://edwardtanguay.netlify.app/share/techBooks.json';
-
-interface IBook {
-	title: string,
-	description: string,
-	language: string
-}
 
 (async () => {
 	const rawBooks: any[] = (await axios.get(rawBooksUrl)).data;
@@ -15,6 +11,7 @@ interface IBook {
 	rawBooks.forEach(rawBook => {
 		const book: IBook = {
 			title: rawBook.title,
+			idCode: rawBook.idCode,
 			description: rawBook.description,
 			language: rawBook.language === '' ? 'english' : rawBook.language
 		}
@@ -27,11 +24,7 @@ interface IBook {
 
 	<div class="books">
 		${books.map(book => {
-			return `
-	<div class="book">
-			<div class="title">${book.title}</div>
-	</div>	
-			`;
+			return displayBook(book);
 	}).join('')}
 	</div>
 	</div>

@@ -15,6 +15,22 @@ body {
 			margin-bottom: 1rem;
 			padding: 1rem;
 			max-width: 32rem;
+			display: flex;
+			align-items: flex-start;
+			gap: 1rem;
+
+			img {
+				width: 7rem;
+				object-fit: contain;
+			}
+
+			.info {
+				.title {
+					color: rgb(235, 179, 76);
+					font-size: 1.3rem;
+					margin-bottom: .5rem;
+				}
+			}
 		}
 
 	}
